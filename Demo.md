@@ -16,7 +16,7 @@ It should ask you for a password, which will be written on the board.
 
 2) Manipulating the data
 
-Some of the data in one file isn't in the other file, so we need to remove it, and get the columns in the same order. Go to [this page](https://github.com/shilab/sample_ovelap) and download the file.
+Some of the data in one file isn't in the other file, so we need to remove it, and get the columns in the same order. Go to [this page](https://github.com/shilab/sample_overlap) and download the file.
 
 We can use this python code to overlap the two files.
 
@@ -48,7 +48,7 @@ library(meQTLfunc)
 Now we can actually run the analysis.
 Type
 ```
-me<-mxeqtl('~/Downloads/data/CNV_matrix.out','~/Downloads/data/CVN_position','~/Downloads/data/liver_expression.out', '~/Downloads/data/gene_position','~/Downloads/data/cisResults','0.05')
+me<-mxeqtl('~/Downloads/data/CNV_matrix.out','~/Downloads/data/CNV_position','~/Downloads/data/liver_expression.out', '~/Downloads/data/gene_position','~/Downloads/data/cisResults', 0.05)
 ```
 4) Analyzing the results
 
