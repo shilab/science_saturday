@@ -8,7 +8,7 @@ If you are using Windows go to [this link](http://gooseberrycreative.com/cmder/)
 
 We will also need Python and R.
 
-1) Make a folder for the data
+##1) Make a folder for the data
 
 Type
 ```
@@ -22,7 +22,7 @@ mkdir data
 ```
 This will make a new folder called data inside your Downloads folder. This is where we will put the files we will use. 
 
-2) Download the data
+##2) Download the data
 
 We'll download the data from GitHub. 
 
@@ -34,7 +34,7 @@ curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/gene_
 curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/liver_expression > data/liver_expression
 ```
 
-2) Manipulating the data
+##3) Manipulating the data
 
 We now have four files: a genotype file, a gene expression file, a gene position file and a CNV position file. Unfortunately for some samples we only have genotype information and not phenotype information, and for others we only have phenotype information.
 We only want samples that have both genotype and phenotype data, and we also want to have the columns in the same order. We have written a Python script to do just that. If you go to [this page](https://github.com/shilab/sample_overlap) you can download the file. On the lower right hand side of the screen is a button that says "Download ZIP", click on it and wait for the download to finish. Next you need to unzip the folder, so simply double click on the downloaded file. 
@@ -48,7 +48,7 @@ python ~/Downloads/sample_overlap-master/overlap.py ~/Downloads/data/CNV_matrix 
 
 It should run for a few seconds. When it is done you should see two new file in the data folder.
 
-3) Running the analysis
+##4) Running the analysis  
 We'll use Matrix eQTL to do the analysis.
 
 Open up RStudio, and type
@@ -71,7 +71,7 @@ Type
 ```
 me<-mxeqtl('~/Downloads/data/CNV_matrix.out','~/Downloads/data/CNV_position','~/Downloads/data/liver_expression.out', '~/Downloads/data/gene_position','~/Downloads/data/cisResults', 0.05)
 ```
-4) Analyzing the results
+##5) Analyzing the results
 
 Move into the data folder by typing
 ```
