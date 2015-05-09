@@ -1,18 +1,38 @@
 Getting Your Feet Wet In Bioinformatics
 ==================
 
-We'll use some Zebrafish data that we've been working with.
+For this hands on demonstration we will use some Zebrafish data that the Shi lab group has been working with.
 
-1) Download the data
+We will be using the command line to perform much of the analysis. If you are using a Mac, go to the finder and search for "Terminal". This is your command line, and you'll use it to type in all the commands below.
+If you are using Windows go to [this link](http://gooseberrycreative.com/cmder/), and follow the download directions. This will give you a command line similar to the one on a Mac or Linux computer.
 
-We'll download the data from a remote server. You'll need to use the command line/terminal to do this.
+We will also need Python and R.
+
+1) Make a folder for the data
 
 Type
 ```
-scp root@45.55.133.218:/root/data/ ~/Downloads
+cd Downloads
 ```
+This will move you into your downloads folder.
 
-It should ask you for a password, which will be written on the board.
+Then type
+```
+mkdir data
+```
+This will make a new folder called data inside your Downloads folder. This is where we will put the files we will use. 
+
+2) Download the data
+
+We'll download the data from GitHub. 
+
+Type
+```
+curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/CNV_matrix > data/CNV_matrix
+curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/CNV_position > data/CNV_position
+curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/gene_position> data/gene_position
+curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/liver_expression > data/liver_expression
+```
 
 2) Manipulating the data
 
