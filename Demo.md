@@ -36,11 +36,12 @@ curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/liver
 
 2) Manipulating the data
 
-Some of the data in one file isn't in the other file, so we need to remove it, and get the columns in the same order. Go to [this page](https://github.com/shilab/sample_overlap) and download the file.
+We now have four files: a genotype file, a gene expression file, a gene position file and a CNV position file. Unfortunately for some samples we only have genotype information and not phenotype information, and for others we only have phenotype information.
+We only want samples that have both genotype and phenotype data, and we also want to have the columns in the same order. We have written a Python script to do just that. If you go to [this page](https://github.com/shilab/sample_overlap) you can download the file. On the lower right hand side of the screen is a button that says "Download ZIP", click on it and wait for the download to finish. Next you need to unzip the folder, so simply double click on the downloaded file. 
 
-We can use this python code to overlap the two files.
+Now we can use this python code to overlap the two files.
 
-Type
+In your command line type
 ```
 python ~/Downloads/sample_overlap-master/overlap.py ~/Downloads/data/CNV_matrix ~/Downloads/data/liver_expression
 ```
