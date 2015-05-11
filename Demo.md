@@ -6,7 +6,9 @@ For this hands on demonstration we will use some Zebrafish data that the Shi lab
 We will be using the command line to perform much of the analysis. If you are using a Mac, go to the finder and search for "Terminal". This is your command line, and you'll use it to type in all the commands below.
 If you are using Windows go to [this link](http://gooseberrycreative.com/cmder/), and follow the download directions. This will give you a command line similar to the one on a Mac or Linux computer.
 
-We will also need Python and R.
+We will also need Python and R. If you are on a Mac, Python should already be installed.
+If you are on Windows, you can go [here](http://continuum.io/downloads#all), and download an installation of Python. 
+To download RStudio, which provides a nice interface for R, go [here](http://www.rstudio.com/), and follow the instructions. 
 
 ##1) Make a folder for the data
 
