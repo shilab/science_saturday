@@ -12,23 +12,18 @@ To download RStudio, which provides a nice interface for R, go [here](http://www
 
 ##1) Make a folder for the data
 
-Type
+To move into your downloads folder type:  
 ```
 cd Downloads
-```
-This will move you into your downloads folder.
-
-Then type
+```  
+Now we will make a new folder called data inside your Downloads folder. This is where we will put the files we will use.  
 ```
 mkdir data
 ```
-This will make a new folder called data inside your Downloads folder. This is where we will put the files we will use. 
 
 ##2) Download the data
 
-We'll download the data from GitHub. 
-
-Type
+We will use curl to download the data from GitHub  
 ```
 curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/CNV_matrix > data/CNV_matrix
 curl https://raw.githubusercontent.com/shilab/science_saturday/master/data/CNV_position > data/CNV_position
@@ -43,7 +38,7 @@ We only want samples that have both genotype and phenotype data, and we also wan
 
 Now we can use this python code to overlap the two files.
 
-In your command line type
+In your command line type  
 ```
 python ~/Downloads/sample_overlap-master/overlap.py ~/Downloads/data/CNV_matrix ~/Downloads/data/liver_expression
 ```
@@ -51,28 +46,34 @@ python ~/Downloads/sample_overlap-master/overlap.py ~/Downloads/data/CNV_matrix 
 It should run for a few seconds. When it is done you should see two new file in the data folder.
 
 ##4) Running the analysis  
-We'll use Matrix eQTL to do the analysis.
+We'll use Matrix eQTL to do the analysis. Matrix eQTL is an R package that can be used for eQTL studies. If you want you can read more about it [here](http://www.bios.unc.edu/research/genomic_software/Matrix_eQTL/).
 
-Open up RStudio, and type
+Open up RStudio, and type  
 ```
 install.packages('MatrixEQTL')
 ```
 
-Go to [this page](https://github.com/shilab/meQTL_functions) and download the folder.
+Next we are going to install a function that will make the eQTL analysis easier to run. Go to [this page](https://github.com/shilab/meQTL_functions) and download the folder using the "Download Zip" button. When it has downloaded, unzip the folder. 
 
-Use the RStudio installer to install the meQTL functions packages.
+To install it type:  
+```
+install.packages('~/Downloads/meQTL_functions/meQTLfunc_0.0.2.tar.gz', repos = NULL, type="source")
+```
 
-Type
+Next we need to load the packages we have installed. Simply type: 
 ```
 library(MatrixEQTL)
 library(meQTLfunc)
 ```
 
 Now we can actually run the analysis.
-Type
+Type  
 ```
 me<-mxeqtl('~/Downloads/data/CNV_matrix.out','~/Downloads/data/CNV_position','~/Downloads/data/liver_expression.out', '~/Downloads/data/gene_position','~/Downloads/data/cisResults', 0.05)
 ```
+
+You should see some text being displayed on the screen as the analysis progresses.
+
 ##5) Analyzing the results
 
 Move into the data folder by typing
@@ -84,6 +85,7 @@ We can look at the results by typing
 ```
 head cisResults
 ```
+head lets us look at the first lines of a file. Our results has six columns, and each row represents a potential eQTL. 
 
 Now lets take a deep look at the data
 ```
